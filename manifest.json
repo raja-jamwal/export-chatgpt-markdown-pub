@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Export ChatGPT Conversations (MarkDown and Plain Text)",
+  "version": "1.0",
+  "description": "A Chrome extension that effortlessly exports your ChatGPT conversations into well-formatted markdown, ready for Notion, Google Docs, or your preferred note-taking app. My extension supports code and mathematical symbol formatting, making it a perfect tool for developers, researchers. Not only this is useful in documentation but also in re-prompting and prompt engineering.",
+  "permissions": ["clipboardRead", "clipboardWrite"],
+  "content_scripts": [
+    {
+      "matches": ["*://chat.openai.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "images/icon16.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["bundle.js"],
+      "matches": ["*://chat.openai.com/*"]
+    }
+  ]
+}
